@@ -45,4 +45,4 @@ Este proceso es necesario para poder obtener una copia del pdf del documento ele
 <br>curl -o factura_folio777_tipo33.pdf http://www.factronica.cl/factronica_webservice_servidor_beta/pdf/factura_folio777_tipo33.pdf
 <hr>
 <h3>Proceso 4: Imprimir el PDF con Boleta Electrónica:</h3>
-Este proceso consiste en enviar el PDF con la boleta electrónica al spooler de impresión. Para ello debe utilizar los comandos correspondientes al lenguaje utilizado en su sistema de boletas electrónicas. Lo ideal es enviar al spooler de impresión pero sin pasar por la pantalla de confirmación de impresión.
+<br>Este proceso consiste en enviar el PDF con la boleta electrónica al spooler de impresión. Para ello debe utilizar los comandos correspondientes al lenguaje utilizado en su sistema de boletas electrónicas. Lo ideal es enviar al spooler de impresión pero sin pasar por la pantalla de confirmación de impresión.
