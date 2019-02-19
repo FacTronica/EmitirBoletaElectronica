@@ -30,9 +30,9 @@ Este proceso Consiste en generar un archivo de texto plano con el formato requer
 <h3>Proceso 2: Enviar Archivo TXT al Servidor de Boletas Electrónicas.</h3>
 Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería opensource CURL.
 <br><br><b>Enviar archivo txt desde Consola Windows:</b>
-<br>c:\curl\curl.exe --form "archivito=@c:\curl\archivo_plano.txt" http://www.factronica.cl/factronica_webservice_servidor_beta/index.php
+<br>c:\curl\curl.exe --form "archivito=@c:\curl\boleta.txt" http://www.facturalibre.cl/factronica_servidor_boletas/recibe_txt_boleta.php
 <br><br><b>Enviar archivo desde Consola Linux:</b>
-<br>curl --form "archivito=@archivo_plano.txt" http://www.factronica.cl/factronica_webservice_servidor_beta/index.php
+<br>curl --form "archivito=@boleta.txt" http://www.facturalibre.cl/factronica_servidor_boletas/recibe_txt_boleta.php
 <br>
 <br>La librería CURL es de uso libre y se encuentra disponible en la siguiente url para descargar de acuerdo a la versión del sistema operativo que realizará el envío del txt al servidor de facturación.
 <br><b>Link Descargar CURL:</b> https://curl.haxx.se/download.html 
@@ -40,9 +40,10 @@ Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería
 <h3>Proceso 3: Recuperar el PDF con Boleta Electrónica:</h3>
 Este proceso es necesario para poder obtener una copia del pdf del documento electrónico.
 <br><br><b>Recuperar archivo Pdf con Windows:</b>
-<br>c:\curl\curl.exe -o c:\curl\factura_folio777_tipo33.pdf http://www.factronica.cl/factronica_webservice_servidor_beta/pdf/factura_folio777_tipo33.pdf
+<br>c:\curl\curl.exe -o c:\curl\boleta.pdf http://www.facturalibre.cl/home/111111111/boleta_folio777_tipo39.pdf
 <br><br><b>Recuperar archivo Pdf con Linux:</b>
-<br>curl -o factura_folio777_tipo33.pdf http://www.factronica.cl/factronica_webservice_servidor_beta/pdf/factura_folio777_tipo33.pdf
+<br>curl -o boleta_folio777_tipo39.pdf http://www.facturalibre.cl/home/111111111/boleta_folio777_tipo39.pdf
+<br><br>El rut 111111111 debe ser reemplazado por el rut del contribuyente emisor.
 <hr>
 <h3>Proceso 4: Imprimir el PDF con Boleta Electrónica:</h3>
 <br>Este proceso consiste en enviar el PDF con la boleta electrónica al spooler de impresión. Para ello debe utilizar los comandos correspondientes al lenguaje utilizado en su sistema de boletas electrónicas. Lo ideal es enviar al spooler de impresión pero sin pasar por la pantalla de confirmación de impresión.
