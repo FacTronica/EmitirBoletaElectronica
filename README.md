@@ -12,7 +12,7 @@ Procedimiento a realizar para la integración de Boleta Electrónica con la API 
 <h3>Proceso 1: Generar Archivo Plano</h3>
 Este proceso Consiste en generar un archivo de texto plano con el formato requerido por el sdk de factronica.
 <br>Dentro del archivo de texto plano debe ir la información que compone al documento emitido:
-<br><b>Información Requerida para construir el TXT:</b>
+<br><br><b>Información Requerida para construir el TXT de Boleta Electrónica:</b>
 <br>-Datos del Servidor de Facturación
 <br>-Datos de Caratula
 <br>-Datos de Emisor
@@ -23,12 +23,12 @@ Este proceso Consiste en generar un archivo de texto plano con el formato requer
 <br>-Datos de Referencias
 <br>-Datos de Timbraje
 <br>-Datos de Certificado
-<br>Ver Formato del archivo TXT para Factura Electrónica Afecta.
+<br>Ver Formato del archivo TXT para Boleta Electrónica.
 <br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/txt_boleta.php
 <br>
 <hr>
-<h3>Proceso 2: Enviar Archivo Txt</h3>
-Para enviar el archivo plano TXT al servidor de Facturación se hace uso de librería opensource CURL.
+<h3>Proceso 2: Enviar Archivo TXT al Servidor de Boletas Electrónicas.</h3>
+Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería opensource CURL.
 <br><br><b>Enviar archivo txt desde Consola Windows:</b>
 <br>c:\curl\curl.exe --form "archivito=@c:\curl\archivo_plano.txt" http://www.factronica.cl/factronica_webservice_servidor_beta/index.php
 <br><br><b>Enviar archivo desde Consola Linux:</b>
