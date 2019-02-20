@@ -24,7 +24,7 @@ Este proceso Consiste en generar un archivo de texto plano con el formato requer
 <br>-Datos de Timbraje
 <br>-Datos de Certificado
 <br>Ver Formato del archivo TXT para Boleta Electrónica.
-<br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/txt_boleta.php
+<br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/boleta_folio777_tipo39.txt
 <br>
 <hr>
 <h3>Proceso 2: Enviar Archivo TXT al Servidor de Boletas Electrónicas.</h3>
