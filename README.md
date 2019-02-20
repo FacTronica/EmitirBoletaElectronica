@@ -40,9 +40,9 @@ Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería
 <h3>Proceso 3: Recuperar el PDF con Boleta Electrónica:</h3>
 Este proceso es necesario para poder obtener una copia del pdf del documento electrónico.
 <br><br><b>Recuperar archivo Pdf con Windows:</b>
-<br>c:\curl\curl.exe -o c:\curl\boleta_folio777_tipo39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/boleta_folio777_tipo39.pdf
+<br>c:\curl\curl.exe -o c:\curl\BOLETA_FOLIO777_TIPO39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/BOLETA_FOLIO777_TIPO39.pdf
 <br><br><b>Recuperar archivo Pdf con Linux:</b>
-<br>curl -o boleta_folio777_tipo39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/boleta_folio777_tipo39.pdf
+<br>curl -o BOLETA_FOLIO777_TIPO39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/BOLETA_FOLIO777_TIPO39.pdf
 <br><br>En el ejemplo utilizado, El rut es 111111111 y debe ser reemplazado por el rut del contribuyente emisor, el folio es 777 y el tipo 39 Boleta electrónica afecta.
 <hr>
 <h3>Proceso 4: Imprimir el PDF con Boleta Electrónica:</h3>
