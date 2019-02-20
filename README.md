@@ -30,9 +30,9 @@ Este proceso Consiste en generar un archivo de texto plano con el formato requer
 <h3>Proceso 2: Enviar Archivo TXT al Servidor de Boletas Electrónicas.</h3>
 Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería opensource CURL.
 <br><br><b>Enviar archivo txt desde Consola Windows:</b>
-<br>c:\curl\curl.exe --form "archivito=@c:\curl\boleta_folio777_tipo39.txt" http://www.facturalibre.cl/factronica_servidor_boletas/recibe_txt_boleta.php
+<br>c:\curl\curl.exe --form "archivito=@c:\curl\boleta_folio777_tipo39.txt" http://www.facturalibre.cl/sdk_factronica/factronica_servidor_boletas/recibe_txt_boleta.php
 <br><br><b>Enviar archivo desde Consola Linux:</b>
-<br>curl --form "archivito=@boleta_folio777_tipo39.txt" http://www.facturalibre.cl/factronica_servidor_boletas/recibe_txt_boleta.php
+<br>curl --form "archivito=@boleta_folio777_tipo39.txt" http://www.facturalibre.cl/sdk_factronica/factronica_servidor_boletas/recibe_txt_boleta.php
 <br>
 <br>La librería CURL es de uso libre y se encuentra disponible en la siguiente url para descargar de acuerdo a la versión del sistema operativo que realizará el envío del txt al servidor de facturación.
 <br><b>Link Descargar CURL:</b> https://curl.haxx.se/download.html 
@@ -40,9 +40,9 @@ Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería
 <h3>Proceso 3: Recuperar el PDF con Boleta Electrónica:</h3>
 Este proceso es necesario para poder obtener una copia del pdf del documento electrónico.
 <br><br><b>Recuperar archivo Pdf con Windows:</b>
-<br>c:\curl\curl.exe -o c:\curl\boleta_folio777_tipo39.pdf http://www.facturalibre.cl/home/111111111/boleta_folio777_tipo39.pdf
+<br>c:\curl\curl.exe -o c:\curl\boleta_folio777_tipo39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/boleta_folio777_tipo39.pdf
 <br><br><b>Recuperar archivo Pdf con Linux:</b>
-<br>curl -o boleta_folio777_tipo39.pdf http://www.facturalibre.cl/home/111111111/boleta_folio777_tipo39.pdf
+<br>curl -o boleta_folio777_tipo39.pdf http://www.facturalibre.cl/sdk_factronica/home/111111111/boleta_folio777_tipo39.pdf
 <br><br>En el ejemplo utilizado, El rut es 111111111 y debe ser reemplazado por el rut del contribuyente emisor, el folio es 777 y el tipo 39 Boleta electrónica afecta.
 <hr>
 <h3>Proceso 4: Imprimir el PDF con Boleta Electrónica:</h3>
