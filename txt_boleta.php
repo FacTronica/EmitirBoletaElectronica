@@ -1,6 +1,6 @@
 <?php 
 ############################################################## 
-#######	PARAMETROS DE CONFIGURACIÓN
+#######	PARAMETROS DE CONFIGURACIÃ“N
 ##############################################################
 #
 # ENVIAR XML AL SII 0=NOENVIAR 1=CERTIFICACION 2=PRODUCCION
@@ -44,7 +44,7 @@ $caratula["RutEnvia"]="ERPFACTRO1";
 # EN MODO CERTIFICACION RUT=60803000-K
 $caratula["RutReceptor"]="60803000-K";  
 #
-# FECHA DE RESOLUCIÓN DE INICIO EN FACTURA ELECTRONICA
+# FECHA DE RESOLUCIÃ“N DE INICIO EN FACTURA ELECTRONICA
 $caratula["FchResol"]="2014-08-22"; 
 #
 # CERTIFICACION NUM=CERO
@@ -57,7 +57,7 @@ $caratula["SucSii"]="SANTIAGO NORTE";
 #######	ENCABEZADO
 ############################################################## 
 #
-# FECHA DE EMISIÓN
+# FECHA DE EMISIÃ“N
 $IdDoc["FchEmis"]="2019-02-19"; 
 #
 # FECHA DE VENCIMIENTO AAAA-MM-DD
@@ -336,6 +336,6 @@ $FACTRONICA["PDFDECIMALESUNITARIO"]="0";
 $FACTRONICA["ALMACENREMOTO"]="../home/111111111";	
 $FACTRONICA["URLSERVIDOR"]="http://190.107.177.113/~apifactronica/servidor_factronica";
 $FACTRONICA["SCRIPTSERVIDOR"]="boletaventa_index.php";
-
+$FACTRONICA["FORMATO_PDF"]="TICKET"; // TICKET O CARTA
 
 ?>
