@@ -1,18 +1,20 @@
 # EmitirBoletaElectronica
+
 API Factronica
 Procedimiento a realizar para la integración de Boleta Electrónica con la API Factronica
 
-<br>A continuación se detalla el Procedimiento para realizar la Emisión de Boleta Electrónica con Software Propio.
-<h3>Procesos a Realizar:</h3>
+A continuación se detalla el Procedimiento para realizar la Emisión de Boleta Electrónica con Software Propio.
+
+Procesos a Realizar:
 1.-Construir un Arreglo en formato json con los datos de la boleta
-<br>2.-Enviar el arreglo por metodo post al Servidor de Facturación de Boletas
-<br>3.-Recuperar Archivo PDF con Boleta Electrónica
-<br>4.-Imprimir Pdf de Boleta Electrónica
-<hr>
-<h3>Proceso 1.-Construir un Arreglo en formato json con los datos de la boleta</h3>
+2.-Enviar el arreglo por metodo post al Servidor de Facturación de Boletas
+3.-Recuperar Archivo PDF con Boleta Electrónica
+4.-Imprimir Pdf de Boleta Electrónica
+
+Proceso 1.-Construir un Arreglo en formato json con los datos de la boleta
 Este proceso Consiste en generar un array con la información requerida por la API de factronica.
-<br>Dentro del array de datos debe ir la información que compone al documento emitido.
-<br>A continuación se describe el formato de los datos a enviar:
+Dentro del array de datos debe ir la información que compone al documento emitido.
+A continuación se describe el formato de los datos a enviar:
 
 $arregloJson = array(
 "TOKEN" => "aquivasutoken",                       // CONSTANTE - OBLIGATORIO - CLAVE DE ACCESO (CONSTANTE)
