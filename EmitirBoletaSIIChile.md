@@ -1,7 +1,7 @@
 # EmitirBoletaSIIChile
 API Factronica Boleta Electrónica
-Procedimiento a realizar para la integración de Boleta Electrónica con la API Factronica
-
+Esta API permite emitir Boleta electrónica Afecta tipo 39 y Boleta electrónica Exenta tipo 41.
+<br>
 <br>A continuación se detallan los pasos para realizar la Emisión de Boleta Electrónica con Software Propio.
 <h3>Pasos a Seguir:</h3>
 1.-Generar un Array con los datos de la Boleta.
@@ -13,18 +13,12 @@ Procedimiento a realizar para la integración de Boleta Electrónica con la API 
 <h3>Paso 1: Generar un Array con los datos de la Boleta</h3>
 Este proceso Consiste en generar un array con los datos de la boleta.
 <br>Ver Formato del array para Boleta Electrónica.
-<br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/boleta_folio777_tipo39.txt
+<br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/json_boleta.php
 <br>
 <hr>
-<h3>Proceso 2: Enviar Archivo TXT al Servidor de Boletas Electrónicas.</h3>
-Para enviar el archivo plano TXT al servidor de Boletas se hace uso de librería opensource CURL.
-<br><br><b>Enviar archivo txt desde Consola Windows:</b>
-<br>c:\curl\curl.exe --form "archivito=@c:\curl\boleta_folio777_tipo39.txt" http://www.facturalibre.cl/sdk_factronica/factronica_servidor_boletas/recibe_txt_boleta.php
-<br><br><b>Enviar archivo desde Consola Linux:</b>
-<br>curl --form "archivito=@boleta_folio777_tipo39.txt" http://www.facturalibre.cl/sdk_factronica/factronica_servidor_boletas/recibe_txt_boleta.php
-<br>
-<br>La librería CURL es de uso libre y se encuentra disponible en la siguiente url para descargar de acuerdo a la versión del sistema operativo que realizará el envío del txt al servidor de facturación.
-<br><b>Link Descargar CURL:</b> https://curl.haxx.se/download.html 
+<h3>Proceso 2: Enviar el array en formato Json al EndPoint de Boletas Electrónicas.</h3>
+Para enviar el Array Json en php se deja ejemplo en el siguiente Link.
+<br>https://github.com/FacTronica/EmitirBoletaElectronica/blob/master/envia_json_boleta.php
 <hr>
 <h3>Proceso 3: Recuperar el PDF con Boleta Electrónica:</h3>
 Este proceso es necesario para poder obtener una copia del pdf del documento electrónico.
