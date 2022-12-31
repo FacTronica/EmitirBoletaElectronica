@@ -16,6 +16,7 @@ Este proceso Consiste en generar un array con la información requerida por la A
 Dentro del array de datos debe ir la información que compone al documento emitido.
 A continuación se describe el formato de los datos a enviar:
 
+<pre>
 <code>
 <?php 
 #
@@ -271,3 +272,4 @@ UNUh4MYLnIfXLdMdea4pkGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQM=
 ); 
 ?>
 </code>
+</pre>
