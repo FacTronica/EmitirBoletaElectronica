@@ -92,21 +92,22 @@ $DatosBoletaElectronica = array(
 "MntNeto" => "20000",
 "MntExe" => "0",
 "IVA" => "3800",
+"MontoNF"=>"5000",   // Corresponde a la suma de montos de bienes o servicios con Indicador exención = 2 y 6  ***********
 "MntTotal" => "23800",
 
 #########################################
 # DETALLE DE ITEMS
 #########################################
-"VlrCodigo"=>array("10001"),
-"NmbItem"=>array("CARGADOR DE CELULAR UNIVERSAL"),
-"DscItem"=>array("CARACTERISTICAS USB UNIVERSAL 5 VOLT."),
-"QtyItem"=>array(2),
-"DecQtyItem"=>array(0),
-"UnmdItem"=>array("UN"),
-"PrcItem"=>array(10000),
-"DecPrcItem"=>array(0),
-"IndExe"=>array(0),
-"MontoItem"=>array(20000),
+"VlrCodigo"=>array("C1","C2"),
+"NmbItem"=>array("CHOCOLATES","CIGARROS"),
+"DscItem"=>array("",""),
+"QtyItem"=>array(2,1),
+"DecQtyItem"=>array(0,0),
+"UnmdItem"=>array("UN","UN"),
+"PrcItem"=>array(10000,5000),
+"DecPrcItem"=>array(0,0),
+"IndExe"=>array(0,2),  // 1=exento 2=no_facturable  6=no_facturable_negativo ***********
+"MontoItem"=>array(20000,5000),
 
 #########################################
 # DESCUENTOS Y/O RECARGO EN ITEMS
