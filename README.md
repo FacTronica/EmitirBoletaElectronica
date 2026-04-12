@@ -259,6 +259,8 @@ POST https://www.factronica.cl/api/sii_herramientas_boletacrearxml/index.php
 
 ---
 
+## Ejemplo en Php
+
 ```php
 <?php
 #
