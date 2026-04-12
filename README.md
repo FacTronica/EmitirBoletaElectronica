@@ -89,20 +89,6 @@ Para conectar con la Api se utiliza un **token** el cual debe ir incluido en el 
 
 ---
 
-### Detalle de Ítems
-
-Se envían como arreglos paralelos:
-
-```json
-"VlrCodigo": ["C1", "C2"],
-"NmbItem": ["CHOCOLATES", "CIGARROS"],
-"QtyItem": [2, 1],
-"PrcItem": [10000, 5000],
-"MontoItem": [20000, 5000]
-```
-
----
-
 ### Firma Electrónica
 
 Campos principales:
@@ -201,7 +187,26 @@ Campos principales:
   "TpoValor": [],
   "ValorDR": [],
   "IndExeDR": [],
-  "proveedor": "empresa prueba spa",
+
+  "Modulus": "4oNKi2qEmTQ==",
+  "Exponent" : "AQAB",
+  "X509Certificate" : "MIIHygcMg==",
+  "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----MIIEpAIBAAKGQ==-----END RSA PRIVATE KEY-----",
+
+  "RE" : "11111111-1",
+  "RS" : "COMERCIALIZADORA PRUEBAS SPA",
+  "TD" : "39",
+  "RNG_D" : "7003",
+  "RNG_H" : "107002",
+  "FA" : "2022-04-28",
+  "RSAPK_M" : "ywGtrqpEHMWCNAXmnZKQBNQ4Jzt2iOlQ1SHgxguch9ct0x15rimQZjn2B2V5Wtk3mLjjWb/DSYs07gPQL5D8yw==",
+  "RSAPK_E" : "Aw==",
+  "RSAPK_IDK" : "300",
+  "FRMA" : "d2U8RrtIW/9N7nMUNk1iKbP2vu5823uwy5OonKZ+vcBoabTcAt5nS0857sXTzGyP90hS+SRm2rAMQITDnXko8g==",
+  "RSASK" : "-----BEGIN RSA PRIVATE KEY-----MIIBOgIBAAJ-----END RSA PRIVATE KEY-----",
+  "RSAPUBK": "-----BEGIN PUBLIC KEY-----FowDQYJKoZIhv-----END PUBLIC KEY-----",
+
+  "proveedor" : "empresa prueba spa",
   "domimio": "www.factronica.cl"
 }
 ```
@@ -350,20 +355,12 @@ $DatosBoletaElectronica = array(
     "Exponent" => "AQAB",
     "X509Certificate" => "MIIHyzCCBbOgAwIBAgIKMibckwABAAEVUzANBgkqhkiG9w0BAQsFADCBvzELMAkG
     A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
-    EwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9y
-    aWRhZCBDZXJ0aWZpY2Fkb3JhMR4wHAYDVQQDExVFLUNFUlRDSElMRSBDQSBGRVMg
-    MDIxJjAkBgkqhkiG9w0BCQEWF3NjbGllbnRlQGUtY2VydGNoaWxlLmNsMB4XDTIy
-    MDQyNzE3MDM1M1oXDTI1MDQyNjE3MDM1M1owgccxCzAJBgNVBAYTAkNMMSIwIAYD
-    SaIM8zjlXqFWhliJV1OyTlJcF3kcFV6gMWAdMDqkzph3mAlpFD7+TzP+FQ8hiDUY
     MgNBLA1go+UYPJ9I4tOTFh3OdSq4lxygyc9wDxxtBGo4lkBtmeZOj8UqLOtKgJgy
     hQqjl3PxXaDMvIOdcuaWMu+pf5YMqF1lSeP0r3gcMg==",
 
     "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----
     MIIEpAIBAAKCAQEA4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO
     8jNP5CKdODAyUNrmCnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/
-    QqS9l5CkXRvgV4y3c539RhGzzVT98yD0NqpuzPx7X0JOlfjRVUskQ316iL5p0G2c
-    eMMp7IzZO3zaowT5yc1Jd6dfnPdymDlUScseRl2UcWCoZqspDrP6dYBvEfL3tkfT
-    ZWKsjQKBgQCEsuLM5BiZThH8XcXgRf7oJFker7QXZ71jk1jW+27ATuJVb7RVAUvn
     PNJkE11p6kGGT0cAWHwfCHw7/VpqhEnRmHZ3PcZk2h0pc+fPHOzm5hB3oyX2Dafa
     Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
     -----END RSA PRIVATE KEY-----",
@@ -382,10 +379,6 @@ $DatosBoletaElectronica = array(
     "FRMA" => "d2U8RrtIW/9N7nMUNk1iKbP2vu5823uwy5OonKZ+vcBoabTcAt5nS0857sXTzGyP90hS+SRm2rAMQITDnXko8g==",
     "RSASK" => "-----BEGIN RSA PRIVATE KEY-----
     MIIBOgIBAAJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojpUNUh4MYLnIfXLdMdea4p
-    kGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQMCQQCHVnPJxtgTLlbNWURpDGAD
-    OCVvfPmwm4s4wUCEB72v45dBifHj72uvcPdK6WMiSaRUQY1ewi+bP2sK2n4bgmDb
-    AiEA/64avwvyuR0D23SPotjRvHL3SRiIADoAaT08fi/LARcCIQDLQrPPzE+1wgyn
-    onfBzpkEp19GMxR7pqurIH+U1oJqbQIhAKp0EdSyodC+ApJNtRc7Nn2h+jC7BVV8
     AEYo0v7Kh1YPAiEAh4HNNTLfzoFdxRb6gTRmAxo/hCINp8RychWqYzmsRvMCIEec
     TZ90iolLEAxDzFTUFUkCVJzablrUheYK9oOY5B2L
     -----END RSA PRIVATE KEY-----
