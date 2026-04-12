@@ -1,11 +1,5 @@
 # API Emisión Boleta Electrónica SII Chile
 
-## Endpoint
-
-POST https://factronica.cl/api/sii_herramientas_boletacrearxml/index.php
-
----
-
 ## Descripción
 
 Este endpoint permite generar una **Boleta Electrónica (DTE tipo 39 o 41)** para el Servicio de Impuestos Internos (SII) de Chile enviando un payload en formato JSON.
@@ -120,7 +114,7 @@ Campos principales:
 
 IMPORTANTE: Manejar estos datos de forma segura.  
 Para Transformar el certificado digital a formato PEM se proporciona la siguiente Url:  
-LINK: http://factronica.cl/sii/transformar_certificado/index.php
+LINK: https://www.factronica.cl/sii/transformar_certificado/index.php
 
 ---
 
@@ -253,3 +247,189 @@ Campos principales:
 - Manejar errores HTTP
 
 ---
+
+## Endpoint
+
+POST https://factronica.cl/api/sii_herramientas_boletacrearxml/index.php
+
+---
+
+```php
+<?php
+#
+#
+error_reporting(E_ERROR | E_WARNING);
+ini_set('display_errors', '1');
+
+#echo "enviando";
+#
+# HOST URL
+
+#
+# FUNCION PARA ENVIAR JSON A UNA URL
+function JsonEnviar($arregloJson, $url)
+{
+    $payload = json_encode($arregloJson);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_PORT, 443);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+    $json_response = curl_exec($curl);
+    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+    return $json_response;
+}
+#
+#
+$DatosBoletaElectronica = array(
+    "token" => "ce39695095fcf5d2a6686d0286019850e5ed4185d81caf5cda0f09c87ef28bda",
+
+    "RutEmisor" => "76606716-6", //************ eliminar duplicado este campo */
+    "RutEnvia" => "22222222-2",
+    "RutReceptor" => "60803000-K",
+
+    "FchResol" => "2014-10-21",
+    "NroResol" => "99",
+    "SucSii" => "SANTIAGO CENTRO",
+    "FchEmis" => "2022-11-15",
+    "FchVenc" => "2022-11-15",
+    "TermPagoGlosa" => "CONTADO EFECTIVO",
+    "TipoDTE" => "39",
+    "Folio" => "7078",
+
+    "TipoDespacho" => "",
+    "IndTraslado" => "",
+
+    "MntBruto" => "1",
+
+    "RazonRef" => "",
+    "Observaciones" => "",
+    "Proyecto" => "",
+
+    "RUTEmisor" => "76606716-6",
+    "RznSoc" => "COMERCIALIZADORA PRUEBAS SPA",
+    "GiroEmis" => "VTA DE CELULARES, ACCESORIOS",
+    "Acteco" => "475909",
+    "CdgSIISucur" => "13000",
+    "DirOrigen" => "ALAMEDA 444",
+    "CmnaOrigen" => "SANTIAGO",
+    "CiudadOrigen" => "SANTIAGO",
+    "CdgVendedor" => "VENTAS OFICINA",
+    "CorreoEmisor" => "pruebas@pruebas.com",
+    "Web" => "",
+    "Telefono" => "5694445566",
+    "Fax" => "",
+
+    "RUTRecep" => "77777777-7",
+    "CdgIntRecep" => "12312",
+    "RznSocRecep" => "PUBLICO GENERAL",
+    "GiroRecep" => "PUBLICO GENERAL",
+    "DirRecep" => "SIN DIRECCION",
+    "CmnaRecep" => "SIN COMUNA",
+    "CiudadRecep" => "SIN CIUDAD",
+    "Contacto" => "PUBLICO GENERAL",
+    "CorreoRecep" => "PUBLICO GENERAL",
+    "FonoRecep" => "569...",
+
+    "TasaIVA" => "19",
+    "MntNeto" => "20000",
+    "MntExe" => "0",
+    "IVA" => "3800",
+    "MontoNF" => "5000",
+    "MntTotal" => "23800",
+
+    "VlrCodigo" => array("C1", "C2"),
+    "NmbItem" => array("CHOCOLATES", "CIGARROS"),
+    "DscItem" => array("", ""),
+    "QtyItem" => array(2, 1),
+    "DecQtyItem" => array(0, 0),
+    "UnmdItem" => array("UN", "UN"),
+    "PrcItem" => array(10000, 5000),
+    "DecPrcItem" => array(0, 0),
+    "IndExe" => array(0, 2),
+    "MontoItem" => array(20000, 5000),
+
+    "DescuentoPct" => array(),
+    "DescuentoMonto" => array(),
+    "RecargoPct" => array(),
+    "RecargoMonto" => array(),
+
+    "NroLinDR" => array(),
+    "TpoMov" => array(),
+    "GlosaDR" => array(),
+    "TpoValor" => array(),
+    "ValorDR" => array(),
+    "IndExeDR" => array(),
+
+
+
+    "Modulus" => "4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO8jNP5CKdODAyUNrm
+CnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/QqS9l5CkXRvgV4y3
+xrfEeCIOoVBPfPVpM9nScLl/dsNpx4Opp6ssx+0eo/MtYUIDDHDGlHQxNjCUWWT/
+51ETylm1lUxv85Wi2qEmTQ==",
+
+    "Exponent" => "AQAB",
+
+    "X509Certificate" => "MIIHyzCCBbOgAwIBAgIKMibckwABAAEVUzANBgkqhkiG9w0BAQsFADCBvzELMAkG
+A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
+EwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9y
+aWRhZCBDZXJ0aWZpY2Fkb3JhMR4wHAYDVQQDExVFLUNFUlRDSElMRSBDQSBGRVMg
+MDIxJjAkBgkqhkiG9w0BCQEWF3NjbGllbnRlQGUtY2VydGNoaWxlLmNsMB4XDTIy
+MDQyNzE3MDM1M1oXDTI1MDQyNjE3MDM1M1owgccxCzAJBgNVBAYTAkNMMSIwIAYD
+SaIM8zjlXqFWhliJV1OyTlJcF3kcFV6gMWAdMDqkzph3mAlpFD7+TzP+FQ8hiDUY
+MgNBLA1go+UYPJ9I4tOTFh3OdSq4lxygyc9wDxxtBGo4lkBtmeZOj8UqLOtKgJgy
+hQqjl3PxXaDMvIOdcuaWMu+pf5YMqF1lSeP0r3gcMg==",
+
+    "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO
+8jNP5CKdODAyUNrmCnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/
+QqS9l5CkXRvgV4y3c539RhGzzVT98yD0NqpuzPx7X0JOlfjRVUskQ316iL5p0G2c
+eMMp7IzZO3zaowT5yc1Jd6dfnPdymDlUScseRl2UcWCoZqspDrP6dYBvEfL3tkfT
+ZWKsjQKBgQCEsuLM5BiZThH8XcXgRf7oJFker7QXZ71jk1jW+27ATuJVb7RVAUvn
+PNJkE11p6kGGT0cAWHwfCHw7/VpqhEnRmHZ3PcZk2h0pc+fPHOzm5hB3oyX2Dafa
+Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
+-----END RSA PRIVATE KEY-----",
+
+
+
+    "RE" => "76606716-6",
+    "RS" => "COMERCIALIZADORA PRUEBAS SPA",
+    "TD" => "39",
+    "RNG_D" => "7003",
+    "RNG_H" => "107002",
+    "FA" => "2022-04-28",
+    "RSAPK_M" => "ywGtrqpEHMWCNAXmnZKQBNQ4Jzt2iOlQ1SHgxguch9ct0x15rimQZjn2B2V5Wtk3mLjjWb/DSYs07gPQL5D8yw==",
+    "RSAPK_E" => "Aw==",
+    "RSAPK_IDK" => "300",
+    "FRMA" => "d2U8RrtIW/9N7nMUNk1iKbP2vu5823uwy5OonKZ+vcBoabTcAt5nS0857sXTzGyP90hS+SRm2rAMQITDnXko8g==",
+    "RSASK" => "-----BEGIN RSA PRIVATE KEY-----
+MIIBOgIBAAJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojpUNUh4MYLnIfXLdMdea4p
+kGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQMCQQCHVnPJxtgTLlbNWURpDGAD
+OCVvfPmwm4s4wUCEB72v45dBifHj72uvcPdK6WMiSaRUQY1ewi+bP2sK2n4bgmDb
+AiEA/64avwvyuR0D23SPotjRvHL3SRiIADoAaT08fi/LARcCIQDLQrPPzE+1wgyn
+onfBzpkEp19GMxR7pqurIH+U1oJqbQIhAKp0EdSyodC+ApJNtRc7Nn2h+jC7BVV8
+AEYo0v7Kh1YPAiEAh4HNNTLfzoFdxRb6gTRmAxo/hCINp8RychWqYzmsRvMCIEec
+TZ90iolLEAxDzFTUFUkCVJzablrUheYK9oOY5B2L
+-----END RSA PRIVATE KEY-----
+",
+
+    "RSAPUBK" => "-----BEGIN PUBLIC KEY-----
+MFowDQYJKoZIhvcNAQEBBQADSQAwRgJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojp
+UNUh4MYLnIfXLdMdea4pkGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQM=
+-----END PUBLIC KEY-----",
+
+    "proveedor" => "empresa prueba spa",
+
+    "domimio" => "www.factronica.cl"
+);
+#
+#
+header('Content-Type: application/json');
+#
+#
+echo   $retorno = JsonEnviar($DatosBoletaElectronica,   "https://www.factronica.cl/api/sii_herramientas_boletacrearxml/index.php");
+?>
+```
