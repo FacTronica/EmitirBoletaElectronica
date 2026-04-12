@@ -1,12 +1,12 @@
-# 📄 Documentación API – Emisión Boleta Electrónica SII Chile
+# API Emisión Boleta Electrónica SII Chile
 
-## 📌 Endpoint
+## Endpoint
 
-POST https://wowdte.com/api/sii_herramientas_boletacrearxml/index.php
+POST https://factronica.cl/api/sii_herramientas_boletacrearxml/index.php
 
 ---
 
-## 📖 Descripción
+## Descripción
 
 Este endpoint permite generar una **Boleta Electrónica (DTE tipo 39)** para el Servicio de Impuestos Internos (SII) de Chile enviando un payload en formato JSON.
 
@@ -22,16 +22,16 @@ Se utiliza un **token** incluido en el payload:
 
 ---
 
-## 📦 Tipo de Request
+## Tipo de Request
 
 - Método: POST
 - Content-Type: application/json
 
 ---
 
-## 🧾 Estructura del Payload
+## Estructura del Payload
 
-### 🔹 Datos Generales
+### Datos Generales
 
 | Campo         | Tipo   | Descripción                  |
 | ------------- | ------ | ---------------------------- |
@@ -44,7 +44,7 @@ Se utiliza un **token** incluido en el payload:
 
 ---
 
-### 🔹 Datos Emisor
+### Datos Emisor
 
 | Campo                 | Tipo   |
 | --------------------- | ------ |
@@ -60,7 +60,7 @@ Se utiliza un **token** incluido en el payload:
 
 ---
 
-### 🔹 Datos Receptor
+### Datos de Receptor
 
 | Campo       | Tipo   |
 | ----------- | ------ |
@@ -74,7 +74,7 @@ Se utiliza un **token** incluido en el payload:
 
 ---
 
-### 🔹 Totales
+### Datos de Totales
 
 | Campo    | Tipo   |
 | -------- | ------ |
@@ -85,7 +85,7 @@ Se utiliza un **token** incluido en el payload:
 
 ---
 
-### 🔹 Detalle de Ítems
+### Detalle de Ítems
 
 Se envían como arreglos paralelos:
 
@@ -99,7 +99,7 @@ Se envían como arreglos paralelos:
 
 ---
 
-### 🔹 Firma Electrónica
+### Firma Electrónica
 
 Campos principales:
 
@@ -108,23 +108,23 @@ Campos principales:
 - X509Certificate
 - PrivKey
 
-⚠️ IMPORTANTE: Manejar estos datos de forma segura.
+IMPORTANTE: Manejar estos datos de forma segura.
 
 ---
 
-### 🔹 CAF (Autorización SII)
+### CAF (Autorización SII)
 
 Campos principales:
 
 - RE, RS, TD
 - RNG_D, RNG_H
 - FA
-- RSAPK\_\*
+- RSAPK
 - FRMA
 
 ---
 
-## 📤 Ejemplo de Request
+## Ejemplo de Request
 
 ```json
 {
@@ -141,7 +141,7 @@ Campos principales:
 
 ---
 
-## 📥 Respuesta
+## Respuesta
 
 Ejemplo:
 
@@ -155,7 +155,7 @@ Ejemplo:
 
 ---
 
-## ⚠️ Consideraciones
+## Consideraciones
 
 - Validar folios disponibles
 - Proteger claves privadas
@@ -164,7 +164,7 @@ Ejemplo:
 
 ---
 
-## 🚀 Flujo
+## Flujo
 
 1. Construir JSON
 2. Firmar
