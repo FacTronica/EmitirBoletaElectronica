@@ -285,12 +285,12 @@ function JsonEnviar($arregloJson, $url)
 #
 #
 $DatosBoletaElectronica = array(
+
     "token" => "---aqui-api-key---",
 
     "RutEmisor" => "11111111-1",
     "RutEnvia" => "22222222-2",
     "RutReceptor" => "60803000-K",
-
     "FchResol" => "2014-10-21",
     "NroResol" => "99",
     "SucSii" => "SANTIAGO CENTRO",
@@ -300,6 +300,7 @@ $DatosBoletaElectronica = array(
     "TipoDTE" => "39",
     "Folio" => "7078",
     "MntBruto" => "1",
+
     "RUTEmisor" => "11111111-1",
     "RznSoc" => "COMERCIALIZADORA PRUEBAS SPA",
     "GiroEmis" => "VTA DE CELULARES, ACCESORIOS",
@@ -312,6 +313,7 @@ $DatosBoletaElectronica = array(
     "CorreoEmisor" => "pruebas@pruebas.com",
     "Web" => "www.pruebas.com",
     "Telefono" => "5694445566",
+
     "RUTRecep" => "77777777-7",
     "CdgIntRecep" => "12312",
     "RznSocRecep" => "PUBLICO GENERAL",
@@ -322,12 +324,14 @@ $DatosBoletaElectronica = array(
     "Contacto" => "PUBLICO GENERAL",
     "CorreoRecep" => "PUBLICO GENERAL",
     "FonoRecep" => "56912345678",
+
     "TasaIVA" => "19",
     "MntNeto" => "20000",
     "MntExe" => "0",
     "IVA" => "3800",
     "MontoNF" => "5000",
     "MntTotal" => "23800",
+
     "VlrCodigo" => array("Codigo1", "Codigo2"),
     "NmbItem" => array("CHOCOLATES", "CIGARROS"),
     "DscItem" => array("", ""),
@@ -342,30 +346,18 @@ $DatosBoletaElectronica = array(
     "DescuentoMonto" => array(),
     "RecargoPct" => array(),
     "RecargoMonto" => array(),
+
     "NroLinDR" => array(),
     "TpoMov" => array(),
     "GlosaDR" => array(),
     "TpoValor" => array(),
     "ValorDR" => array(),
     "IndExeDR" => array(),
-    "Modulus" => "4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO8jNP5CKdODAyUNrm
-    CnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/QqS9l5CkXRvgV4y3
-    xrfEeCIOoVBPfPVpM9nScLl/dsNpx4Opp6ssx+0eo/MtYUIDDHDGlHQxNjCUWWT/
-    51ETylm1lUxv85Wi2qEmTQ==",
+
+    "Modulus" => "4oNKEmTQ==",
     "Exponent" => "AQAB",
-    "X509Certificate" => "MIIHyzCCBbOgAwIBAgIKMibckwABAAEVUzANBgkqhkiG9w0BAQsFADCBvzELMAkG
-    A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
-    MgNBLA1go+UYPJ9I4tOTFh3OdSq4lxygyc9wDxxtBGo4lkBtmeZOj8UqLOtKgJgy
-    hQqjl3PxXaDMvIOdcuaWMu+pf5YMqF1lSeP0r3gcMg==",
-
-    "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----
-    MIIEpAIBAAKCAQEA4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO
-    8jNP5CKdODAyUNrmCnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/
-    PNJkE11p6kGGT0cAWHwfCHw7/VpqhEnRmHZ3PcZk2h0pc+fPHOzm5hB3oyX2Dafa
-    Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
-    -----END RSA PRIVATE KEY-----",
-
-
+    "X509Certificate" => "MIIHyzCCBbOgSeP0r3gcMg==",
+    "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----G77UzigB+hcM-----END RSA PRIVATE KEY-----",
 
     "RE" => "11111111-1",
     "RS" => "COMERCIALIZADORA PRUEBAS SPA",
@@ -377,21 +369,12 @@ $DatosBoletaElectronica = array(
     "RSAPK_E" => "Aw==",
     "RSAPK_IDK" => "300",
     "FRMA" => "d2U8RrtIW/9N7nMUNk1iKbP2vu5823uwy5OonKZ+vcBoabTcAt5nS0857sXTzGyP90hS+SRm2rAMQITDnXko8g==",
-    "RSASK" => "-----BEGIN RSA PRIVATE KEY-----
-    MIIBOgIBAAJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojpUNUh4MYLnIfXLdMdea4p
-    AEYo0v7Kh1YPAiEAh4HNNTLfzoFdxRb6gTRmAxo/hCINp8RychWqYzmsRvMCIEec
-    TZ90iolLEAxDzFTUFUkCVJzablrUheYK9oOY5B2L
-    -----END RSA PRIVATE KEY-----
-",
-
-    "RSAPUBK" => "-----BEGIN PUBLIC KEY-----
-    MFowDQYJKoZIhvcNAQEBBQADSQAwRgJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojp
-    UNUh4MYLnIfXLdMdea4pkGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQM=
-    -----END PUBLIC KEY-----",
+    "RSASK" => "-----BEGIN RSA PRIVATE KEY-----OgIBAAJBAM-----END RSA PRIVATE KEY-----",
+    "RSAPUBK" => "-----BEGIN PUBLIC KEY-----RBzFgjQF5p2Sk-----END PUBLIC KEY-----",
 
     "proveedor" => "empresa prueba spa",
-
     "domimio" => "www.factronica.cl"
+
 );
 #
 #
