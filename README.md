@@ -135,7 +135,7 @@ Campos principales:
 ```json
 {
   "token": "ce39695095fcf5d2a6686d0286019850e5ed4185d81caf5cda0f09c87ef28bda",
-  "RutEmisor": "76606716-6",
+  "RutEmisor": "11111111-1",
   "RutEnvia": "22222222-2",
   "RutReceptor": "60803000-K",
   "FchResol": "2014-10-21",
@@ -152,7 +152,7 @@ Campos principales:
   "RazonRef": "",
   "Observaciones": "",
   "Proyecto": "",
-  "RUTEmisor": "76606716-6",
+  "RUTEmisor": "11111111-1",
   "RznSoc": "COMERCIALIZADORA PRUEBAS SPA",
   "GiroEmis": "VTA DE CELULARES, ACCESORIOS",
   "Acteco": "475909",
@@ -219,7 +219,7 @@ Campos principales:
     "TipoDTE": "39",
     "Folio": "7078",
     "MntTotal": "23800",
-    "RUTEmisor": "76606716-6",
+    "RUTEmisor": "11111111-1",
     "RutEnvia": "22222222-2",
     "RUTRecep": "77777777-7",
     "FchEmis": "2022-11-15"
@@ -250,7 +250,7 @@ Campos principales:
 
 ## Endpoint
 
-POST https://factronica.cl/api/sii_herramientas_boletacrearxml/index.php
+POST https://www.factronica.cl/api/sii_herramientas_boletacrearxml/index.php
 
 ---
 
@@ -260,11 +260,6 @@ POST https://factronica.cl/api/sii_herramientas_boletacrearxml/index.php
 #
 error_reporting(E_ERROR | E_WARNING);
 ini_set('display_errors', '1');
-
-#echo "enviando";
-#
-# HOST URL
-
 #
 # FUNCION PARA ENVIAR JSON A UNA URL
 function JsonEnviar($arregloJson, $url)
@@ -285,9 +280,9 @@ function JsonEnviar($arregloJson, $url)
 #
 #
 $DatosBoletaElectronica = array(
-    "token" => "ce39695095fcf5d2a6686d0286019850e5ed4185d81caf5cda0f09c87ef28bda",
+    "token" => "---aqui-api-key---",
 
-    "RutEmisor" => "76606716-6", //************ eliminar duplicado este campo */
+    "RutEmisor" => "11111111-1",
     "RutEnvia" => "22222222-2",
     "RutReceptor" => "60803000-K",
 
@@ -299,17 +294,8 @@ $DatosBoletaElectronica = array(
     "TermPagoGlosa" => "CONTADO EFECTIVO",
     "TipoDTE" => "39",
     "Folio" => "7078",
-
-    "TipoDespacho" => "",
-    "IndTraslado" => "",
-
     "MntBruto" => "1",
-
-    "RazonRef" => "",
-    "Observaciones" => "",
-    "Proyecto" => "",
-
-    "RUTEmisor" => "76606716-6",
+    "RUTEmisor" => "11111111-1",
     "RznSoc" => "COMERCIALIZADORA PRUEBAS SPA",
     "GiroEmis" => "VTA DE CELULARES, ACCESORIOS",
     "Acteco" => "475909",
@@ -319,10 +305,8 @@ $DatosBoletaElectronica = array(
     "CiudadOrigen" => "SANTIAGO",
     "CdgVendedor" => "VENTAS OFICINA",
     "CorreoEmisor" => "pruebas@pruebas.com",
-    "Web" => "",
+    "Web" => "www.pruebas.com",
     "Telefono" => "5694445566",
-    "Fax" => "",
-
     "RUTRecep" => "77777777-7",
     "CdgIntRecep" => "12312",
     "RznSocRecep" => "PUBLICO GENERAL",
@@ -332,16 +316,14 @@ $DatosBoletaElectronica = array(
     "CiudadRecep" => "SIN CIUDAD",
     "Contacto" => "PUBLICO GENERAL",
     "CorreoRecep" => "PUBLICO GENERAL",
-    "FonoRecep" => "569...",
-
+    "FonoRecep" => "56912345678",
     "TasaIVA" => "19",
     "MntNeto" => "20000",
     "MntExe" => "0",
     "IVA" => "3800",
     "MontoNF" => "5000",
     "MntTotal" => "23800",
-
-    "VlrCodigo" => array("C1", "C2"),
+    "VlrCodigo" => array("Codigo1", "Codigo2"),
     "NmbItem" => array("CHOCOLATES", "CIGARROS"),
     "DscItem" => array("", ""),
     "QtyItem" => array(2, 1),
@@ -351,51 +333,44 @@ $DatosBoletaElectronica = array(
     "DecPrcItem" => array(0, 0),
     "IndExe" => array(0, 2),
     "MontoItem" => array(20000, 5000),
-
     "DescuentoPct" => array(),
     "DescuentoMonto" => array(),
     "RecargoPct" => array(),
     "RecargoMonto" => array(),
-
     "NroLinDR" => array(),
     "TpoMov" => array(),
     "GlosaDR" => array(),
     "TpoValor" => array(),
     "ValorDR" => array(),
     "IndExeDR" => array(),
-
-
-
     "Modulus" => "4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO8jNP5CKdODAyUNrm
-CnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/QqS9l5CkXRvgV4y3
-xrfEeCIOoVBPfPVpM9nScLl/dsNpx4Opp6ssx+0eo/MtYUIDDHDGlHQxNjCUWWT/
-51ETylm1lUxv85Wi2qEmTQ==",
-
+    CnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/QqS9l5CkXRvgV4y3
+    xrfEeCIOoVBPfPVpM9nScLl/dsNpx4Opp6ssx+0eo/MtYUIDDHDGlHQxNjCUWWT/
+    51ETylm1lUxv85Wi2qEmTQ==",
     "Exponent" => "AQAB",
-
     "X509Certificate" => "MIIHyzCCBbOgAwIBAgIKMibckwABAAEVUzANBgkqhkiG9w0BAQsFADCBvzELMAkG
-A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
-EwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9y
-aWRhZCBDZXJ0aWZpY2Fkb3JhMR4wHAYDVQQDExVFLUNFUlRDSElMRSBDQSBGRVMg
-MDIxJjAkBgkqhkiG9w0BCQEWF3NjbGllbnRlQGUtY2VydGNoaWxlLmNsMB4XDTIy
-MDQyNzE3MDM1M1oXDTI1MDQyNjE3MDM1M1owgccxCzAJBgNVBAYTAkNMMSIwIAYD
-SaIM8zjlXqFWhliJV1OyTlJcF3kcFV6gMWAdMDqkzph3mAlpFD7+TzP+FQ8hiDUY
-MgNBLA1go+UYPJ9I4tOTFh3OdSq4lxygyc9wDxxtBGo4lkBtmeZOj8UqLOtKgJgy
-hQqjl3PxXaDMvIOdcuaWMu+pf5YMqF1lSeP0r3gcMg==",
+    A1UEBhMCQ0wxHTAbBgNVBAgTFFJlZ2lvbiBNZXRyb3BvbGl0YW5hMREwDwYDVQQH
+    EwhTYW50aWFnbzEUMBIGA1UEChMLRS1DRVJUQ0hJTEUxIDAeBgNVBAsTF0F1dG9y
+    aWRhZCBDZXJ0aWZpY2Fkb3JhMR4wHAYDVQQDExVFLUNFUlRDSElMRSBDQSBGRVMg
+    MDIxJjAkBgkqhkiG9w0BCQEWF3NjbGllbnRlQGUtY2VydGNoaWxlLmNsMB4XDTIy
+    MDQyNzE3MDM1M1oXDTI1MDQyNjE3MDM1M1owgccxCzAJBgNVBAYTAkNMMSIwIAYD
+    SaIM8zjlXqFWhliJV1OyTlJcF3kcFV6gMWAdMDqkzph3mAlpFD7+TzP+FQ8hiDUY
+    MgNBLA1go+UYPJ9I4tOTFh3OdSq4lxygyc9wDxxtBGo4lkBtmeZOj8UqLOtKgJgy
+    hQqjl3PxXaDMvIOdcuaWMu+pf5YMqF1lSeP0r3gcMg==",
 
     "PrivKey" => "-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEA4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO
-8jNP5CKdODAyUNrmCnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/
-QqS9l5CkXRvgV4y3c539RhGzzVT98yD0NqpuzPx7X0JOlfjRVUskQ316iL5p0G2c
-eMMp7IzZO3zaowT5yc1Jd6dfnPdymDlUScseRl2UcWCoZqspDrP6dYBvEfL3tkfT
-ZWKsjQKBgQCEsuLM5BiZThH8XcXgRf7oJFker7QXZ71jk1jW+27ATuJVb7RVAUvn
-PNJkE11p6kGGT0cAWHwfCHw7/VpqhEnRmHZ3PcZk2h0pc+fPHOzm5hB3oyX2Dafa
-Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
------END RSA PRIVATE KEY-----",
+    MIIEpAIBAAKCAQEA4oNKekvq7s5h7ZhP7zgaHDsIiB/Wq1L8HDLChuCR9E9JZFqO
+    8jNP5CKdODAyUNrmCnukBodHSOeUwtIz8UTfsZeFNwEG77UzigB+hcMd7sCLRAm/
+    QqS9l5CkXRvgV4y3c539RhGzzVT98yD0NqpuzPx7X0JOlfjRVUskQ316iL5p0G2c
+    eMMp7IzZO3zaowT5yc1Jd6dfnPdymDlUScseRl2UcWCoZqspDrP6dYBvEfL3tkfT
+    ZWKsjQKBgQCEsuLM5BiZThH8XcXgRf7oJFker7QXZ71jk1jW+27ATuJVb7RVAUvn
+    PNJkE11p6kGGT0cAWHwfCHw7/VpqhEnRmHZ3PcZk2h0pc+fPHOzm5hB3oyX2Dafa
+    Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
+    -----END RSA PRIVATE KEY-----",
 
 
 
-    "RE" => "76606716-6",
+    "RE" => "11111111-1",
     "RS" => "COMERCIALIZADORA PRUEBAS SPA",
     "TD" => "39",
     "RNG_D" => "7003",
@@ -406,20 +381,20 @@ Q+FVhTtCf+jj4XgxKI0uUwon4mn2/UM39DhoGKW5w9JtZJ9ZHkyoGQ==
     "RSAPK_IDK" => "300",
     "FRMA" => "d2U8RrtIW/9N7nMUNk1iKbP2vu5823uwy5OonKZ+vcBoabTcAt5nS0857sXTzGyP90hS+SRm2rAMQITDnXko8g==",
     "RSASK" => "-----BEGIN RSA PRIVATE KEY-----
-MIIBOgIBAAJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojpUNUh4MYLnIfXLdMdea4p
-kGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQMCQQCHVnPJxtgTLlbNWURpDGAD
-OCVvfPmwm4s4wUCEB72v45dBifHj72uvcPdK6WMiSaRUQY1ewi+bP2sK2n4bgmDb
-AiEA/64avwvyuR0D23SPotjRvHL3SRiIADoAaT08fi/LARcCIQDLQrPPzE+1wgyn
-onfBzpkEp19GMxR7pqurIH+U1oJqbQIhAKp0EdSyodC+ApJNtRc7Nn2h+jC7BVV8
-AEYo0v7Kh1YPAiEAh4HNNTLfzoFdxRb6gTRmAxo/hCINp8RychWqYzmsRvMCIEec
-TZ90iolLEAxDzFTUFUkCVJzablrUheYK9oOY5B2L
------END RSA PRIVATE KEY-----
+    MIIBOgIBAAJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojpUNUh4MYLnIfXLdMdea4p
+    kGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQMCQQCHVnPJxtgTLlbNWURpDGAD
+    OCVvfPmwm4s4wUCEB72v45dBifHj72uvcPdK6WMiSaRUQY1ewi+bP2sK2n4bgmDb
+    AiEA/64avwvyuR0D23SPotjRvHL3SRiIADoAaT08fi/LARcCIQDLQrPPzE+1wgyn
+    onfBzpkEp19GMxR7pqurIH+U1oJqbQIhAKp0EdSyodC+ApJNtRc7Nn2h+jC7BVV8
+    AEYo0v7Kh1YPAiEAh4HNNTLfzoFdxRb6gTRmAxo/hCINp8RychWqYzmsRvMCIEec
+    TZ90iolLEAxDzFTUFUkCVJzablrUheYK9oOY5B2L
+    -----END RSA PRIVATE KEY-----
 ",
 
     "RSAPUBK" => "-----BEGIN PUBLIC KEY-----
-MFowDQYJKoZIhvcNAQEBBQADSQAwRgJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojp
-UNUh4MYLnIfXLdMdea4pkGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQM=
------END PUBLIC KEY-----",
+    MFowDQYJKoZIhvcNAQEBBQADSQAwRgJBAMsBra6qRBzFgjQF5p2SkATUOCc7dojp
+    UNUh4MYLnIfXLdMdea4pkGY59gdleVrZN5i441m/w0mLNO4D0C+Q/MsCAQM=
+    -----END PUBLIC KEY-----",
 
     "proveedor" => "empresa prueba spa",
 
