@@ -120,7 +120,8 @@ Campos principales:
 
 ```json
 {
-  "token": "ce39695095fcf5d2a6686d0286019850e5ed4185d81caf5cda0f09c87ef28bda",
+  "token": "---api---key---",
+
   "RutEmisor": "11111111-1",
   "RutEnvia": "22222222-2",
   "RutReceptor": "60803000-K",
@@ -132,12 +133,8 @@ Campos principales:
   "TermPagoGlosa": "CONTADO EFECTIVO",
   "TipoDTE": "39",
   "Folio": "7078",
-  "TipoDespacho": "",
-  "IndTraslado": "",
   "MntBruto": "1",
-  "RazonRef": "",
-  "Observaciones": "",
-  "Proyecto": "",
+
   "RUTEmisor": "11111111-1",
   "RznSoc": "COMERCIALIZADORA PRUEBAS SPA",
   "GiroEmis": "VTA DE CELULARES, ACCESORIOS",
@@ -150,7 +147,7 @@ Campos principales:
   "CorreoEmisor": "pruebas@pruebas.com",
   "Web": "",
   "Telefono": "5694445566",
-  "Fax": "",
+
   "RUTRecep": "77777777-7",
   "CdgIntRecep": "12312",
   "RznSocRecep": "PUBLICO GENERAL",
@@ -161,12 +158,14 @@ Campos principales:
   "Contacto": "PUBLICO GENERAL",
   "CorreoRecep": "PUBLICO GENERAL",
   "FonoRecep": "569...",
+
   "TasaIVA": "19",
   "MntNeto": "20000",
   "MntExe": "0",
   "IVA": "3800",
   "MontoNF": "5000",
   "MntTotal": "23800",
+
   "VlrCodigo": ["C1", "C2"],
   "NmbItem": ["CHOCOLATES", "CIGARROS"],
   "DscItem": ["", ""],
@@ -181,6 +180,7 @@ Campos principales:
   "DescuentoMonto": [],
   "RecargoPct": [],
   "RecargoMonto": [],
+
   "NroLinDR": [],
   "TpoMov": [],
   "GlosaDR": [],
