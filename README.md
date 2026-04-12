@@ -16,7 +16,7 @@ Este endpoint permite generar una **Boleta Electrónica (DTE tipo 39 o 41)** par
 
 ---
 
-## 🔐 Autenticación
+## Autenticación
 
 Para conectar con la Api se utiliza un **token** el cual debe ir incluido en el payload de la petición:
 
